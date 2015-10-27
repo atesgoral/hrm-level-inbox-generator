@@ -83,5 +83,5 @@ exports.generate = function (levelNumber, inbox) {
         return null;
     }
 
-    generator(inbox);
+    return generator(inbox);
 };
