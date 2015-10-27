@@ -116,6 +116,36 @@ generators[7] = function (inbox) {
     };
 };
 
+/*** Tripler Room ***/
+generators[8] = function (inbox) {
+    inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).or().zero().toArray();
+
+    // Triple the numbers
+    var outbox = inbox.map(function (item) {
+        return item * 3;
+    });
+
+    return {
+        inbox: inbox,
+        outbox: outbox
+    };
+};
+
+/*** Zero Preservation Initiative ***/
+generators[9] = function (inbox) {
+    inbox = inbox || pick.between(6, 15).letters().or().numbersBetween(-9, 9).or().zero().toArray();
+
+    // Preserve zeros
+    var outbox = inbox.filter(function (item) {
+        return item === 0;
+    });
+
+    return {
+        inbox: inbox,
+        outbox: outbox
+    };
+};
+
 exports.generate = function (levelNumber, inbox) {
     var generator = generators[levelNumber];
 

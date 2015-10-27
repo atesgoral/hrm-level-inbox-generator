@@ -78,3 +78,41 @@ exports.testGenerateOutbox7 = function (test) {
     test.deepEqual(io.outbox, [ 8, -4, 'A', 9 ]);
     test.done();
 };
+
+exports.testGenerateInbox8 = function (test) {
+    brute(function () {
+        var io = generator.generate(8);
+
+        test.ok(io.inbox.length >= 3 && io.inbox.length <= 6);
+        test.ok(io.inbox.every(function (item) {
+            return item >= -9 && item <= 9;
+        }));
+    });
+    test.done();
+};
+
+exports.testGenerateOutbox8 = function (test) {
+    var io = generator.generate(8, [ 7, -5, 5, 0 ]);
+
+    test.deepEqual(io.outbox, [ 21, -15, 15, 0 ]);
+    test.done();
+};
+
+exports.testGenerateInbox9 = function (test) {
+    brute(function () {
+        var io = generator.generate(9);
+
+        test.ok(io.inbox.length >= 6 && io.inbox.length <= 15);
+        test.ok(io.inbox.every(function (item) {
+            return (item >= 'A' && item <= 'Z') || (item >= -9 && item <= 9);
+        }));
+    });
+    test.done();
+};
+
+exports.testGenerateOutbox9 = function (test) {
+    var io = generator.generate(9, [ 2, 0, 1, 'B', 0, 0, 6, 0 ]);
+
+    test.deepEqual(io.outbox, [ 0, 0, 0, 0 ]);
+    test.done();
+};
