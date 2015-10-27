@@ -5,7 +5,9 @@ Human Resource Machine inbox generator for testing and benchmarking solutions.
 
 Generates a random inbox that is appropriate for a given level.
 
-## .generate(levelNumber)
+## Methods
+
+### .generate(levelNumber)
 
 **levelNumber** - _Number_. The level number (1-41).
 
