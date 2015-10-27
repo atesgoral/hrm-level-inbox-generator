@@ -64,7 +64,7 @@ generators[7] = function (inbox) {
 generators[8] = function (inbox) {
     inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).or().zero().toArray();
 
-    // Triple the numbers
+    // Multiply the numbers by 3
     var outbox = inbox.map(function (item) {
         return item * 3;
     });
@@ -82,6 +82,36 @@ generators[9] = function (inbox) {
     // Preserve zeros
     var outbox = inbox.filter(function (item) {
         return item === 0;
+    });
+
+    return {
+        inbox: inbox,
+        outbox: outbox
+    };
+};
+
+/*** Octoplier Suite ***/
+generators[10] = function (inbox) {
+    inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).or().zero().toArray();
+
+    // Multiply the numbers by 8
+    var outbox = inbox.map(function (item) {
+        return item * 8;
+    });
+
+    return {
+        inbox: inbox,
+        outbox: outbox
+    };
+};
+
+/*** Tetracontiplier ***/
+generators[12] = function (inbox) {
+    inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).or().zero().toArray();
+
+    // Multiply the numbers by 40
+    var outbox = inbox.map(function (item) {
+        return item * 40;
     });
 
     return {
