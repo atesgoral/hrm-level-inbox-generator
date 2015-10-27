@@ -1,0 +1,27 @@
+{
+  "name": "hrm-level-io-generator",
+  "version": "0.0.0",
+  "description": "Human Resource Machine inbox/outbox data generator for testing and benchmarking solutions",
+  "main": "index.js",
+  "scripts": {
+    "test": "nodeunit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atesgoral/hrm-level-io-generator.git"
+  },
+  "keywords": [
+    "hrm",
+    "test",
+    "benchmark"
+  ],
+  "author": "Ates Goral <ates@magnetiq.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atesgoral/hrm-level-io-generator/issues"
+  },
+  "homepage": "https://github.com/atesgoral/hrm-level-io-generator#readme",
+  "devDependencies": {
+    "nodeunit": "^0.9.1"
+  }
+}
