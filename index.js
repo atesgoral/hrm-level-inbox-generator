@@ -45,6 +45,9 @@ generators[3] = function () {
     };
 };
 
+/*** Scrambler Handler ***/
+generators[4] = undefined;
+
 /*** Rainy Summer ***/
 generators[6] = function (inbox) {
     inbox = inbox || pick.between(3, 6).pairsOf().numbersBetween(-9, 9).toArray();
@@ -122,6 +125,9 @@ generators[10] = function (inbox) {
     };
 };
 
+/*** Sub Hallway ***/
+generators[11] = undefined;
+
 /*** Tetracontiplier ***/
 generators[12] = function (inbox) {
     inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).toArray();
@@ -136,6 +142,9 @@ generators[12] = function (inbox) {
         outbox: outbox
     };
 };
+
+/*** Equalization Room ***/
+generators[13] = undefined;
 
 /*** Maximization Room ***/
 generators[14] = function (inbox) {
@@ -154,6 +163,39 @@ generators[14] = function (inbox) {
     };
 };
 
+/*** Absolute Positivity ***/
+generators[16] = undefined;
+
+/*** Exclusive Lounge ***/
+generators[17] = undefined;
+
+/*** Countdown ***/
+generators[19] = undefined;
+
+/*** Multiplication Workshop ***/
+generators[20] = undefined;
+
+/*** Zero Terminated Sum ***/
+generators[21] = undefined;
+
+/*** Fibonacci Visitor ***/
+generators[22] = undefined;
+
+/*** The Littlest Number ***/
+generators[23] = undefined;
+
+/*** Mod Module ***/
+generators[24] = undefined;
+
+/*** Cumulative Countdown ***/
+generators[25] = undefined;
+
+/*** Small Divide ***/
+generators[26] = undefined;
+
+/*** Three Sort ***/
+generators[28] = undefined;
+
 /*** Storage Floor ***/
 generators[29] = function (inbox) {
     var tiles = tilesForLevel[29];
@@ -171,6 +213,33 @@ generators[29] = function (inbox) {
     };
 };
 
+/*** String Storage Floor ***/
+generators[30] = undefined;
+
+/*** String Reverse ***/
+generators[31] = undefined;
+
+/*** Inventory Report ***/
+generators[32] = undefined;
+
+/*** Vowel Incinerator ***/
+generators[34] = undefined;
+
+/*** Duplicate Removal ***/
+generators[35] = undefined;
+
+/*** Alphabetizer ***/
+generators[36] = undefined;
+
+/*** Scavenger Chain ***/
+generators[37] = undefined;
+
+/*** Digit Exploder ***/
+generators[38] = undefined;
+
+/*** Re-Coordinator ***/
+generators[39] = undefined;
+
 /*** Prime Factory ***/
 generators[40] = function (inbox) {
     inbox = inbox || pick.exactly(3).numbersBetween(2, 30).toArray(); // @todo .primes().or().nonPrimes()
@@ -187,6 +256,9 @@ generators[40] = function (inbox) {
         outbox: outbox
     };
 };
+
+/*** Sorting Floor ***/
+generators[41] = undefined;
 
 exports.generate = function (levelNumber, inbox) {
     var generator = generators[levelNumber];
