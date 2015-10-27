@@ -3,11 +3,13 @@
 # hrm-level-io-generator
 Human Resource Machine inbox/outbox data generator for testing and benchmarking solutions
 
+Generates a random inbox that is appropriate for a given level and computes the output that is expected.
+
 ## generate(levelNumber, [ inbox ])
 
 **levelNumber** - _Number_. The level number (1-41).
 
-**inbox** - _Array_. _Optional_. If omitted, a random inbox will be generated. You can pass in a specific inbox if you like.
+**inbox** - _Array_. _Optional_. If omitted, a random inbox will be generated. You can pass in your own custom inbox and let the generator just compute the output.
 
 **returns** - _Object_. The object has `inbox` and `object` arrays as properties.
 
