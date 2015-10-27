@@ -1,9 +1,11 @@
-function randomNumberBetween(min, max) {
+// @todo Assert state/chain transitions
+
+function randomNumberBetween(min, max, nonZero) {
     var number;
 
     do {
         number = Math.floor(Math.random() * (max - min + 1)) + min;
-    } while (number === 0);
+    } while (nonZero && number === 0);
 
     return number;
 }
@@ -16,12 +18,19 @@ Slots.prototype.toArray = function () {
     return this._slots.slice(0);
 };
 
+Slots.prototype.pairsOf = function () {
+    this._slots = this._slots.concat(this._slots);
+    return this;
+};
+
 Slots.prototype.numbersBetween = function (min, max) {
     this._slots = this._slots.map(function (item) {
         return this._or && Math.random() > 0.5
             ? item
-            : randomNumberBetween(min, max);
+            : randomNumberBetween(min, max, this._nonZero);
     }, this);
+
+    this._or = false;
 
     return this;
 };
@@ -36,21 +45,18 @@ Slots.prototype.letters = function () {
             : String.fromCharCode(randomNumberBetween(a, z));
     }, this);
 
-    return this;
-};
-
-Slots.prototype.zero = function () {
-    this._slots = this._slots.map(function (item) {
-        return this._or && Math.random() > 0.5
-            ? item
-            : 0;
-    }, this);
+    this._or = false;
 
     return this;
 };
 
 Slots.prototype.or = function () {
     this._or = true;
+    return this;
+};
+
+Slots.prototype.nonZero = function () {
+    this._nonZero = true;
     return this;
 };
 

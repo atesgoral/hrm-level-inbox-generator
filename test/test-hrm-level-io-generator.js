@@ -155,6 +155,25 @@ exports.testGenerateOutbox12 = function (test) {
     test.done();
 };
 
+exports.testGenerateInbox14 = function (test) {
+    brute(function () {
+        var io = generator.generate(14);
+
+        test.ok(io.inbox.length >= 6 && io.inbox.length <= 12 && (io.inbox.length & 1) === 0);
+        test.ok(io.inbox.every(function (item) {
+            return item >= -9 && item <= 9;
+        }));
+    });
+    test.done();
+};
+
+exports.testGenerateOutbox14 = function (test) {
+    var io = generator.generate(14, [ 4, 9, -8, -4, 9, 9, -6, -3 ]);
+
+    test.deepEqual(io.outbox, [ 9, -4, 9, -3 ]);
+    test.done();
+};
+
 exports.testGenerateInbox29 = function (test) {
     brute(function () {
         var io = generator.generate(29);

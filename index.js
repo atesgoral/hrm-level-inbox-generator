@@ -47,7 +47,7 @@ generators[3] = function () {
 
 /*** Zero Exterminator ***/
 generators[7] = function (inbox) {
-    inbox = inbox || pick.between(6, 15).letters().or().numbersBetween(-9, 9).or().zero().toArray();
+    inbox = inbox || pick.between(6, 15).letters().or().numbersBetween(-9, 9).toArray();
 
     // Filter out zeros
     var outbox = inbox.filter(function (item) {
@@ -62,7 +62,7 @@ generators[7] = function (inbox) {
 
 /*** Tripler Room ***/
 generators[8] = function (inbox) {
-    inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).or().zero().toArray();
+    inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).toArray();
 
     // Multiply the numbers by 3
     var outbox = inbox.map(function (item) {
@@ -77,7 +77,7 @@ generators[8] = function (inbox) {
 
 /*** Zero Preservation Initiative ***/
 generators[9] = function (inbox) {
-    inbox = inbox || pick.between(6, 15).letters().or().numbersBetween(-9, 9).or().zero().toArray();
+    inbox = inbox || pick.between(6, 15).letters().or().numbersBetween(-9, 9).toArray();
 
     // Preserve zeros
     var outbox = inbox.filter(function (item) {
@@ -92,7 +92,7 @@ generators[9] = function (inbox) {
 
 /*** Octoplier Suite ***/
 generators[10] = function (inbox) {
-    inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).or().zero().toArray();
+    inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).toArray();
 
     // Multiply the numbers by 8
     var outbox = inbox.map(function (item) {
@@ -107,12 +107,29 @@ generators[10] = function (inbox) {
 
 /*** Tetracontiplier ***/
 generators[12] = function (inbox) {
-    inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).or().zero().toArray();
+    inbox = inbox || pick.between(3, 6).numbersBetween(-9, 9).toArray();
 
     // Multiply the numbers by 40
     var outbox = inbox.map(function (item) {
         return item * 40;
     });
+
+    return {
+        inbox: inbox,
+        outbox: outbox
+    };
+};
+
+/*** Maximization Room ***/
+generators[14] = function (inbox) {
+    inbox = inbox || pick.between(3, 6).pairsOf().numbersBetween(-9, 9).toArray();
+
+    // Output the maximum of each pair
+    var outbox = [];
+
+    for (var i = 0; i < inbox.length; i += 2) {
+        outbox.push(Math.max(inbox[i], inbox[i + 1]));
+    }
 
     return {
         inbox: inbox,
