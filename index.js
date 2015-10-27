@@ -45,6 +45,23 @@ generators[3] = function () {
     };
 };
 
+/*** Rainy Summer ***/
+generators[6] = function (inbox) {
+    inbox = inbox || pick.between(3, 6).pairsOf().numbersBetween(-9, 9).toArray();
+
+    // Output the sum of each pair
+    var outbox = [];
+
+    for (var i = 0; i < inbox.length; i += 2) {
+        outbox.push(inbox[i] + inbox[i + 1]);
+    }
+
+    return {
+        inbox: inbox,
+        outbox: outbox
+    };
+};
+
 /*** Zero Exterminator ***/
 generators[7] = function (inbox) {
     inbox = inbox || pick.between(6, 15).letters().or().numbersBetween(-9, 9).toArray();

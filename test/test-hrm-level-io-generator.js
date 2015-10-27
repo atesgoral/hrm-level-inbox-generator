@@ -60,6 +60,25 @@ exports.testGenerateOutbox3 = function (test) {
     test.done();
 };
 
+exports.testGenerateInbox6 = function (test) {
+    brute(function () {
+        var io = generator.generate(6);
+
+        test.ok(io.inbox.length >= 6 && io.inbox.length <= 12 && (io.inbox.length & 1) === 0);
+        test.ok(io.inbox.every(function (item) {
+            return item >= -9 && item <= 9;
+        }));
+    });
+    test.done();
+};
+
+exports.testGenerateOutbox6 = function (test) {
+    var io = generator.generate(6, [ 3, 3, 1, 4, -3, 5, 0, -1 ]);
+
+    test.deepEqual(io.outbox, [ 6, 5, 2, -1 ]);
+    test.done();
+};
+
 exports.testGenerateInbox7 = function (test) {
     brute(function () {
         var io = generator.generate(7);
