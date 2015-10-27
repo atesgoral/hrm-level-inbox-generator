@@ -1,19 +1,27 @@
 function randomNumberBetween(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    var number;
+
+    do {
+        number = Math.floor(Math.random() * (max - min + 1)) + min;
+    } while (number === 0);
+
+    return number;
 }
 
 function Slots(count) {
-    this.slots = new Array(count);
+    this._slots = new Array(count);
 }
 
 Slots.prototype.toArray = function () {
-    return this.slots.slice(0);
+    return this._slots.slice(0);
 };
 
-Slots.prototype.numbersUpTo = function (max) {
-    this.slots = this.slots.map(function () {
-        return Math.floor(Math.random() * max) + 1;
-    });
+Slots.prototype.numbersBetween = function (min, max) {
+    this._slots = this._slots.map(function (item) {
+        return this._or && Math.random() > 0.5
+            ? item
+            : randomNumberBetween(min, max);
+    }, this);
 
     return this;
 };
@@ -22,10 +30,27 @@ Slots.prototype.letters = function () {
     var a = 'A'.charCodeAt(0),
         z = 'Z'.charCodeAt(0);
 
-    this.slots = this.slots.map(function () {
-        return String.fromCharCode(randomNumberBetween(a, z));
-    });
+    this._slots = this._slots.map(function (item) {
+        return this._or && Math.random() > 0.5
+            ? item
+            : String.fromCharCode(randomNumberBetween(a, z));
+    }, this);
 
+    return this;
+};
+
+Slots.prototype.zero = function () {
+    this._slots = this._slots.map(function (item) {
+        return this._or && Math.random() > 0.5
+            ? item
+            : 0;
+    }, this);
+
+    return this;
+};
+
+Slots.prototype.or = function () {
+    this._or = true;
     return this;
 };
 
@@ -43,7 +68,7 @@ var generators = {};
 
 /*** Mail Room ***/
 generators[1] = function (inbox) {
-    inbox = inbox || pick.exactly(3).numbersUpTo(9).toArray();
+    inbox = inbox || pick.exactly(3).numbersBetween(1, 9).toArray();
 
     // Direct copy
     var outbox = inbox.slice(0);
@@ -73,6 +98,21 @@ generators[3] = function () {
     return {
         inbox: [ -99, -99, -99, -99 ],
         outbox: [ "B", "U", "G" ]
+    };
+};
+
+/*** Zero Exterminator ***/
+generators[7] = function (inbox) {
+    inbox = inbox || pick.between(6, 15).letters().or().numbersBetween(-9, 9).or().zero().toArray();
+
+    // Filter out zeros
+    var outbox = inbox.filter(function (item) {
+        return item !== 0;
+    });
+
+    return {
+        inbox: inbox,
+        outbox: outbox
     };
 };
 
