@@ -126,7 +126,21 @@ generators[10] = function (inbox) {
 };
 
 /*** Sub Hallway ***/
-generators[11] = undefined;
+generators[11] = function (inbox) {
+    inbox = inbox || pick.between(3, 6).pairsOf().numbersBetween(-9, 9).toArray();
+
+    // Output difference of each pair, both ways
+    var outbox = [];
+
+    for (var i = 0; i < inbox.length; i += 2) {
+        outbox.push(inbox[i + 1] - inbox[i], inbox[i] - inbox[i + 1]);
+    }
+
+    return {
+        inbox: inbox,
+        outbox: outbox
+    };
+};
 
 /*** Tetracontiplier ***/
 generators[12] = function (inbox) {
