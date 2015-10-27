@@ -1,4 +1,11 @@
-var pf = require('quick-primefactors');
+var pf = require('quick-primefactors'),
+    levels = require('hrm-level-data');
+
+var tilesForLevel = {};
+
+levels.forEach(function (level) {
+    tilesForLevel[level.number] = level.floor && level.floor.tiles;
+});
 
 function randomNumberBetween(min, max) {
     var number;
@@ -140,6 +147,23 @@ generators[9] = function (inbox) {
     // Preserve zeros
     var outbox = inbox.filter(function (item) {
         return item === 0;
+    });
+
+    return {
+        inbox: inbox,
+        outbox: outbox
+    };
+};
+
+/*** Storage Floor ***/
+generators[29] = function (inbox) {
+    var tiles = tilesForLevel[29];
+
+    inbox = inbox || pick.between(4, 8).numbersBetween(0, 9).toArray();
+
+    // Lookup floor tiles
+    var outbox = inbox.map(function (item) {
+        return tiles[item];
     });
 
     return {

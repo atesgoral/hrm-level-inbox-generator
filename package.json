@@ -25,6 +25,7 @@
     "nodeunit": "^0.9.1"
   },
   "dependencies": {
+    "hrm-level-data": "^1.0.0",
     "quick-primefactors": "^1.0.0"
   }
 }

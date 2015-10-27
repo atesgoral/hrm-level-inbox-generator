@@ -117,6 +117,25 @@ exports.testGenerateOutbox9 = function (test) {
     test.done();
 };
 
+exports.testGenerateInbox29 = function (test) {
+    brute(function () {
+        var io = generator.generate(29);
+
+        test.ok(io.inbox.length >= 4 && io.inbox.length <= 8);
+        test.ok(io.inbox.every(function (item) {
+            return item >= 0 && item <= 9;
+        }));
+    });
+    test.done();
+};
+
+exports.testGenerateOutbox29 = function (test) {
+    var io = generator.generate(29, [ 7, 3, 3, 8, 8 ]);
+
+    test.deepEqual(io.outbox, [ 'L', 'E', 'E', 'Y', 'Y' ]);
+    test.done();
+};
+
 exports.testGenerateInbox40 = function (test) {
     brute(function () {
         var io = generator.generate(40);
