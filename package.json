@@ -1,6 +1,6 @@
 {
   "name": "hrm-level-io-generator",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Human Resource Machine inbox/outbox data generator for testing and benchmarking solutions",
   "main": "index.js",
   "scripts": {
