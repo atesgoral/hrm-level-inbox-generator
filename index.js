@@ -1,3 +1,5 @@
+var pf = require('quick-primefactors');
+
 function randomNumberBetween(min, max) {
     var number;
 
@@ -138,6 +140,23 @@ generators[9] = function (inbox) {
     // Preserve zeros
     var outbox = inbox.filter(function (item) {
         return item === 0;
+    });
+
+    return {
+        inbox: inbox,
+        outbox: outbox
+    };
+};
+
+/*** Prime Factory ***/
+generators[40] = function (inbox) {
+    inbox = inbox || pick.exactly(3).numbersBetween(2, 30).toArray(); // @todo .primes().or().nonPrimes()
+
+    // Output prime factors smallest to largest of each number
+    var outbox = [];
+
+    inbox.forEach(function (item) {
+        Array.prototype.push.apply(outbox, pf(item));
     });
 
     return {

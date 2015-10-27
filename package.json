@@ -23,5 +23,8 @@
   "homepage": "https://github.com/atesgoral/hrm-level-io-generator#readme",
   "devDependencies": {
     "nodeunit": "^0.9.1"
+  },
+  "dependencies": {
+    "quick-primefactors": "^1.0.0"
   }
 }

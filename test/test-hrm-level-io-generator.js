@@ -116,3 +116,22 @@ exports.testGenerateOutbox9 = function (test) {
     test.deepEqual(io.outbox, [ 0, 0, 0, 0 ]);
     test.done();
 };
+
+exports.testGenerateInbox40 = function (test) {
+    brute(function () {
+        var io = generator.generate(40);
+
+        test.ok(io.inbox.length === 3);
+        test.ok(io.inbox.every(function (item) {
+            return item >= 2 && item <= 30;
+        }));
+    });
+    test.done();
+};
+
+exports.testGenerateOutbox40 = function (test) {
+    var io = generator.generate(40, [ 13, 18, 11 ]);
+
+    test.deepEqual(io.outbox, [ 13, 2, 3, 3, 11 ]);
+    test.done();
+};
