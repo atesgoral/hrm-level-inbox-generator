@@ -201,6 +201,19 @@ exports.test19 = function (test) {
     test.done();
 };
 
+/*** Multiplication Workshop ***/
+exports.test20 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(20);
+
+        test.ok(inbox.length === 10);
+        test.ok(inbox.every(function (item) {
+            return item >= 0 && item <= 9;
+        }));
+    });
+    test.done();
+};
+
 exports.test29 = function (test) {
     brute(function () {
         var inbox = generator.generate(29);

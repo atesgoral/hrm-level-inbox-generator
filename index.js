@@ -76,7 +76,9 @@ var generators = {
         return pick.exactly(4).numbersBetween(-9, 9).toArray();
     },
     /*** Multiplication Workshop ***/
-    '20': undefined,
+    '20': function () {
+        return pick.exactly(5).pairsOf().numbersBetween(0, 9).toArray();
+    },
     /*** Zero Terminated Sum ***/
     '21': undefined,
     /*** Fibonacci Visitor ***/
