@@ -21,6 +21,8 @@ var generators = {
             pick.exactly(1).pairsOf().numbersBetween(1, 10).toArray()
         );
     },
+    /*** Coffee Time ***/
+    '5': null,
     /*** Rainy Summer ***/
     '6': function () {
         return pick.between(3, 6).pairsOf().numbersBetween(-9, 9).toArray();
@@ -57,6 +59,8 @@ var generators = {
     '14': function () {
         return pick.between(3, 6).pairsOf().numbersBetween(-9, 9).toArray();
     },
+    /*** Employee Morale Insertion ***/
+    '15': null,
     /*** Absolute Positivity ***/
     '16': function () {
         return pick.exactly(7).numbersBetween(-9, 9).toArray();
@@ -65,6 +69,8 @@ var generators = {
     '17': function () {
         return pick.exactly(4).pairsOf().nonZero().numbersBetween(-9, 9).toArray();
     },
+    /*** Sabbatical Beach Paradise ***/
+    '18': null,
     /*** Countdown ***/
     '19': function () {
         return pick.exactly(4).numbersBetween(-9, 9).toArray();
@@ -83,6 +89,8 @@ var generators = {
     '25': undefined,
     /*** Small Divide ***/
     '26': undefined,
+    /*** Midnight Petroleum ***/
+    '27': null,
     /*** Three Sort ***/
     '28': undefined,
     /*** Storage Floor ***/
@@ -95,6 +103,8 @@ var generators = {
     '31': undefined,
     /*** Inventory Report ***/
     '32': undefined,
+    /*** Where's Carol? ***/
+    '33': null,
     /*** Vowel Incinerator ***/
     '34': undefined,
     /*** Duplicate Removal ***/
@@ -113,6 +123,8 @@ var generators = {
     },
     /*** Sorting Floor ***/
     '41': undefined,
+    /*** End Program. Congratulations. ***/
+    '42': null
 };
 
 exports.generate = function (levelNumber) {
