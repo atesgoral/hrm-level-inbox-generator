@@ -6,6 +6,7 @@ function brute(testFn) {
     }
 }
 
+/*** Mail Room ***/
 exports.test1 = function (test) {
     brute(function () {
         var inbox = generator.generate(1);
@@ -18,6 +19,7 @@ exports.test1 = function (test) {
     test.done();
 };
 
+/*** Busy Mail Room ***/
 exports.test2 = function (test) {
     brute(function () {
         var inbox = generator.generate(2);
@@ -30,6 +32,7 @@ exports.test2 = function (test) {
     test.done();
 };
 
+/*** Copy Floor ***/
 exports.test3 = function (test) {
     brute(function () {
         var inbox = generator.generate(3);
@@ -39,6 +42,7 @@ exports.test3 = function (test) {
     test.done();
 };
 
+/*** Scrambler Handler ***/
 exports.test4 = function (test) {
     brute(function () {
         var inbox = generator.generate(4);
@@ -57,6 +61,10 @@ exports.test4 = function (test) {
     test.done();
 };
 
+/*** Coffee Time ***/
+/*** 5 ***/
+
+/*** Rainy Summer ***/
 exports.test6 = function (test) {
     brute(function () {
         var inbox = generator.generate(6);
@@ -69,6 +77,7 @@ exports.test6 = function (test) {
     test.done();
 };
 
+/*** Zero Exterminator ***/
 exports.test7 = function (test) {
     brute(function () {
         var inbox = generator.generate(7);
@@ -81,6 +90,7 @@ exports.test7 = function (test) {
     test.done();
 };
 
+/*** Tripler Room ***/
 exports.test8 = function (test) {
     brute(function () {
         var inbox = generator.generate(8);
@@ -93,6 +103,7 @@ exports.test8 = function (test) {
     test.done();
 };
 
+/*** Zero Preservation Initiative ***/
 exports.test9 = function (test) {
     brute(function () {
         var inbox = generator.generate(9);
@@ -105,6 +116,7 @@ exports.test9 = function (test) {
     test.done();
 };
 
+/*** Octoplier Suite ***/
 exports.test10 = function (test) {
     brute(function () {
         var inbox = generator.generate(10);
@@ -117,6 +129,7 @@ exports.test10 = function (test) {
     test.done();
 };
 
+/*** Sub Hallway ***/
 exports.test11 = function (test) {
     brute(function () {
         var inbox = generator.generate(11);
@@ -129,6 +142,7 @@ exports.test11 = function (test) {
     test.done();
 };
 
+/*** Tetracontiplier ***/
 exports.test12 = function (test) {
     brute(function () {
         var inbox = generator.generate(12);
@@ -141,6 +155,7 @@ exports.test12 = function (test) {
     test.done();
 };
 
+/*** Equalization Room ***/
 exports.test13 = function (test) {
     brute(function () {
         var inbox = generator.generate(13);
@@ -153,6 +168,7 @@ exports.test13 = function (test) {
     test.done();
 };
 
+/*** Maximization Room ***/
 exports.test14 = function (test) {
     brute(function () {
         var inbox = generator.generate(14);
@@ -165,6 +181,10 @@ exports.test14 = function (test) {
     test.done();
 };
 
+/*** Employee Morale Insertion ***/
+/*** 15 ***/
+
+/*** Absolute Positivity ***/
 exports.test16 = function (test) {
     brute(function () {
         var inbox = generator.generate(16);
@@ -177,6 +197,7 @@ exports.test16 = function (test) {
     test.done();
 };
 
+/*** Exclusive Lounge ***/
 exports.test17 = function (test) {
     brute(function () {
         var inbox = generator.generate(17);
@@ -189,6 +210,10 @@ exports.test17 = function (test) {
     test.done();
 };
 
+/*** Sabbatical Beach Paradise ***/
+/*** 18 ***/
+
+/*** Countdown ***/
 exports.test19 = function (test) {
     brute(function () {
         var inbox = generator.generate(19);
@@ -214,6 +239,45 @@ exports.test20 = function (test) {
     test.done();
 };
 
+/*** Zero Terminated Sum ***/
+exports.test21 = function (test) {
+    test.done();
+};
+
+/*** Fibonacci Visitor ***/
+exports.test22 = function (test) {
+    test.done();
+};
+
+/*** The Littlest Number ***/
+exports.test23 = function (test) {
+    test.done();
+};
+
+/*** Mod Module ***/
+exports.test24 = function (test) {
+    test.done();
+};
+
+/*** Cumulative Countdown ***/
+exports.test25 = function (test) {
+    test.done();
+};
+
+/*** Small Divide ***/
+exports.test26 = function (test) {
+    test.done();
+};
+
+/*** Midnight Petroleum ***/
+/*** 27 ***/
+
+/*** Three Sort ***/
+exports.test28 = function (test) {
+    test.done();
+};
+
+/*** Storage Floor ***/
 exports.test29 = function (test) {
     brute(function () {
         var inbox = generator.generate(29);
@@ -226,6 +290,55 @@ exports.test29 = function (test) {
     test.done();
 };
 
+/*** String Storage Floor ***/
+exports.test30 = function (test) {
+    test.done();
+};
+
+/*** String Reverse ***/
+exports.test31 = function (test) {
+    test.done();
+};
+
+/*** Inventory Report ***/
+exports.test32 = function (test) {
+    test.done();
+};
+
+/*** Where's Carol? ***/
+/*** 33 ***/
+
+/*** Vowel Incinerator ***/
+exports.test34 = function (test) {
+    test.done();
+};
+
+/*** Duplicate Removal ***/
+exports.test35 = function (test) {
+    test.done();
+};
+
+/*** Alphabetizer ***/
+exports.test36 = function (test) {
+    test.done();
+};
+
+/*** Scavenger Chain ***/
+exports.test37 = function (test) {
+    test.done();
+};
+
+/*** Digit Exploder ***/
+exports.test38 = function (test) {
+    test.done();
+};
+
+/*** Re-Coordinator ***/
+exports.test39 = function (test) {
+    test.done();
+};
+
+/*** Prime Factory ***/
 exports.test40 = function (test) {
     brute(function () {
         var inbox = generator.generate(40);
@@ -237,3 +350,11 @@ exports.test40 = function (test) {
     });
     test.done();
 };
+
+/*** Sorting Floor ***/
+exports.test41 = function (test) {
+    test.done();
+};
+
+/*** End Program. Congratulations. ***/
+/*** 42 ***/
