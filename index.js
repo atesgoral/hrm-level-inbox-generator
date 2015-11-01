@@ -52,7 +52,7 @@ var generators = {
     /*** Absolute Positivity ***/
     '16': undefined,
     /*** Exclusive Lounge ***/
-    '17': undefined,
+    '17': undefined, // @todo use nonZero()?
     /*** Countdown ***/
     '19': undefined,
     /*** Multiplication Workshop ***/
