@@ -14,7 +14,13 @@ var generators = {
         return [ -99, -99, -99, -99 ];
     },
     /*** Scrambler Handler ***/
-    '4': undefined,
+    '4': function () {
+        return [].concat(
+            pick.exactly(1).pairsOf().numbersBetween(1, 10).toArray(),
+            pick.exactly(1).pairsOf().letters().toArray(),
+            pick.exactly(1).pairsOf().numbersBetween(1, 10).toArray()
+        );
+    },
     /*** Rainy Summer ***/
     '6': function () {
         return pick.between(3, 6).pairsOf().numbersBetween(-9, 9).toArray();

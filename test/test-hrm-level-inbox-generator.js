@@ -39,6 +39,24 @@ exports.test3 = function (test) {
     test.done();
 };
 
+exports.test4 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(4);
+
+        test.ok(inbox.length === 6);
+        test.ok(inbox.slice(0, 2).every(function (item) {
+            return item >= -9 && item <= 9;
+        }));
+        test.ok(inbox.slice(2, 4).every(function (item) {
+            return item >= 'A' && item <= 'Z';
+        }));
+        test.ok(inbox.slice(4).every(function (item) {
+            return item >= -9 && item <= 9;
+        }));
+    });
+    test.done();
+};
+
 exports.test6 = function (test) {
     brute(function () {
         var inbox = generator.generate(6);
