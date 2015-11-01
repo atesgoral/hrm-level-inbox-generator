@@ -165,6 +165,30 @@ exports.test14 = function (test) {
     test.done();
 };
 
+exports.test16 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(16);
+
+        test.ok(inbox.length === 7);
+        test.ok(inbox.every(function (item) {
+            return item >= -9 && item <= 9;
+        }));
+    });
+    test.done();
+};
+
+exports.test17 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(17);
+
+        test.ok(inbox.length === 8);
+        test.ok(inbox.every(function (item) {
+            return item >= -9 && item <= 9;
+        }));
+    });
+    test.done();
+};
+
 exports.test29 = function (test) {
     brute(function () {
         var inbox = generator.generate(29);

@@ -58,9 +58,13 @@ var generators = {
         return pick.between(3, 6).pairsOf().numbersBetween(-9, 9).toArray();
     },
     /*** Absolute Positivity ***/
-    '16': undefined,
+    '16': function () {
+        return pick.exactly(7).numbersBetween(-9, 9).toArray();
+    },
     /*** Exclusive Lounge ***/
-    '17': undefined, // @todo use nonZero()?
+    '17': function () {
+        return pick.exactly(4).pairsOf().nonZero().numbersBetween(-9, 9).toArray();
+    },
     /*** Countdown ***/
     '19': undefined,
     /*** Multiplication Workshop ***/
