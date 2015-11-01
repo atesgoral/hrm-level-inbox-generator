@@ -66,7 +66,9 @@ var generators = {
         return pick.exactly(4).pairsOf().nonZero().numbersBetween(-9, 9).toArray();
     },
     /*** Countdown ***/
-    '19': undefined,
+    '19': function () {
+        return pick.exactly(4).numbersBetween(-9, 9).toArray();
+    },
     /*** Multiplication Workshop ***/
     '20': undefined,
     /*** Zero Terminated Sum ***/

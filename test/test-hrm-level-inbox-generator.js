@@ -183,6 +183,18 @@ exports.test17 = function (test) {
 
         test.ok(inbox.length === 8);
         test.ok(inbox.every(function (item) {
+            return item >= -9 && item <= 9 && item !== 0;
+        }));
+    });
+    test.done();
+};
+
+exports.test19 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(19);
+
+        test.ok(inbox.length === 4);
+        test.ok(inbox.every(function (item) {
             return item >= -9 && item <= 9;
         }));
     });
