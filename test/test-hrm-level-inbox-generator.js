@@ -141,6 +141,18 @@ exports.test12 = function (test) {
     test.done();
 };
 
+exports.test13 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(13);
+
+        test.ok(inbox.length === 8);
+        test.ok(inbox.every(function (item) {
+            return item >= -9 && item <= 9;
+        }));
+    });
+    test.done();
+};
+
 exports.test14 = function (test) {
     brute(function () {
         var inbox = generator.generate(14);

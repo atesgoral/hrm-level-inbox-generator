@@ -50,7 +50,9 @@ var generators = {
         return pick.between(3, 6).numbersBetween(-9, 9).toArray();
     },
     /*** Equalization Room ***/
-    '13': undefined,
+    '13': function () {
+        return pick.exactly(4).pairsOf().numbersBetween(-9, 9).toArray();
+    },
     /*** Maximization Room ***/
     '14': function () {
         return pick.between(3, 6).pairsOf().numbersBetween(-9, 9).toArray();
