@@ -162,7 +162,9 @@ var generators = {
     /*** Where's Carol? ***/
     '33': null,
     /*** Vowel Incinerator ***/
-    '34': undefined,
+    '34': function () {
+        return pick.exactly(10).letters().toArray();
+    },
     /*** Duplicate Removal ***/
     '35': undefined,
     /*** Alphabetizer ***/

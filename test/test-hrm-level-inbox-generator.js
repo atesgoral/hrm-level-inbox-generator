@@ -432,6 +432,14 @@ exports.test32 = function (test) {
 
 /*** Vowel Incinerator ***/
 exports.test34 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(34);
+
+        test.ok(inbox.length === 10);
+        test.ok(inbox.every(function (item) {
+            return item >= 'A' && item <= 'Z';
+        }));
+    });
     test.done();
 };
 
