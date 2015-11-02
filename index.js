@@ -170,7 +170,12 @@ var generators = {
         return pick.exactly(10).letters().toArray();
     },
     /*** Alphabetizer ***/
-    '36': undefined,
+    '36': function () {
+        return [].concat(
+            pick.between(3, 6).letters().toArray().concat(0),
+            pick.between(3, 6).letters().toArray().concat(0)
+        );
+    },
     /*** Scavenger Chain ***/
     '37': undefined,
     /*** Digit Exploder ***/

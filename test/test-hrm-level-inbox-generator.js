@@ -458,6 +458,21 @@ exports.test35 = function (test) {
 
 /*** Alphabetizer ***/
 exports.test36 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(36);
+
+        var strings = splitStrings(inbox);
+
+        test.ok(strings.length === 2);
+        test.ok(strings.every(function (string) {
+            return string.length >= 3 && string.length <= 6;
+        }));
+        test.ok(strings.every(function (string) {
+            return string.every(function (item) {
+                return item >= 'A' && item <= 'Z';
+            });
+        }));
+    });
     test.done();
 };
 
