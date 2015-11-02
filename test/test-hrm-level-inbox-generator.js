@@ -80,7 +80,9 @@ exports.test4 = function (test) {
 };
 
 /*** Coffee Time ***/
-/*** 5 ***/
+exports.test5 = function (test) {
+    test.done();
+};
 
 /*** Rainy Summer ***/
 exports.test6 = function (test) {
@@ -200,7 +202,9 @@ exports.test14 = function (test) {
 };
 
 /*** Employee Morale Insertion ***/
-/*** 15 ***/
+exports.test15 = function (test) {
+    test.done();
+};
 
 /*** Absolute Positivity ***/
 exports.test16 = function (test) {
@@ -229,7 +233,9 @@ exports.test17 = function (test) {
 };
 
 /*** Sabbatical Beach Paradise ***/
-/*** 18 ***/
+exports.test18 = function (test) {
+    test.done();
+};
 
 /*** Countdown ***/
 exports.test19 = function (test) {
@@ -348,7 +354,9 @@ exports.test26 = function (test) {
 };
 
 /*** Midnight Petroleum ***/
-/*** 27 ***/
+exports.test27 = function (test) {
+    test.done();
+};
 
 /*** Three Sort ***/
 exports.test28 = function (test) {
@@ -428,7 +436,9 @@ exports.test32 = function (test) {
 };
 
 /*** Where's Carol? ***/
-/*** 33 ***/
+exports.test33 = function (test) {
+    test.done();
+};
 
 /*** Vowel Incinerator ***/
 exports.test34 = function (test) {
@@ -545,4 +555,6 @@ exports.test41 = function (test) {
 };
 
 /*** End Program. Congratulations. ***/
-/*** 42 ***/
+exports.test42 = function (test) {
+    test.done();
+};
