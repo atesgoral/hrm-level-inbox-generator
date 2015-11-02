@@ -19,7 +19,12 @@ Slots.prototype.toArray = function () {
 };
 
 Slots.prototype.pairsOf = function () {
-    this._slots = this._slots.concat(this._slots);
+    this._slots = new Array(this._slots.length * 2);
+    return this;
+};
+
+Slots.prototype.triplesOf = function () {
+    this._slots = new Array(this._slots.length * 3);
     return this;
 };
 

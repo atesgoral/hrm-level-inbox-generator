@@ -104,7 +104,9 @@ var generators = {
         return pick.exactly(4).pairsOf().numbersBetween(1, 9).toArray(); // @todo allow 0 in dividend
     },
     /*** Cumulative Countdown ***/
-    '25': undefined,
+    '25': function () {
+        return pick.exactly(4).numbersBetween(0, 9).toArray();
+    },
     /*** Small Divide ***/
     '26': function () {
         return pick.exactly(4).pairsOf().numbersBetween(1, 9).toArray(); // @todo allow 0 in dividend
@@ -112,7 +114,9 @@ var generators = {
     /*** Midnight Petroleum ***/
     '27': null,
     /*** Three Sort ***/
-    '28': undefined,
+    '28': function () {
+        return pick.exactly(4).triplesOf().numbersBetween(-9, 9).toArray();
+    },
     /*** Storage Floor ***/
     '29': function () {
         return pick.between(4, 8).numbersBetween(0, 9).toArray();

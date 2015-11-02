@@ -318,6 +318,14 @@ exports.test24 = function (test) {
 
 /*** Cumulative Countdown ***/
 exports.test25 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(25);
+
+        test.ok(inbox.length === 4);
+        test.ok(inbox.every(function (item) {
+            return item >= 0 && item <= 9;
+        }));
+    });
     test.done();
 };
 
@@ -339,6 +347,14 @@ exports.test26 = function (test) {
 
 /*** Three Sort ***/
 exports.test28 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(28);
+
+        test.ok(inbox.length === 12);
+        test.ok(inbox.every(function (item) {
+            return item >= -9 && item <= 9;
+        }));
+    });
     test.done();
 };
 
