@@ -88,9 +88,17 @@ var generators = {
         );
     },
     /*** Fibonacci Visitor ***/
-    '22': undefined,
+    '22': function () {
+        return pick.exactly(2).numbersBetween(5, 25).toArray();
+    },
     /*** The Littlest Number ***/
-    '23': undefined,
+    '23': function () {
+        return [].concat(
+            pick.between(3, 5).numbersBetween(1, 99).toArray().concat(0),
+            pick.between(3, 5).numbersBetween(1, 99).toArray().concat(0),
+            pick.between(3, 5).numbersBetween(1, 99).toArray().concat(0)
+        );
+    },
     /*** Mod Module ***/
     '24': undefined,
     /*** Cumulative Countdown ***/

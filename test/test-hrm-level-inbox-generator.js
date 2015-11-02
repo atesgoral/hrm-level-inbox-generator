@@ -273,11 +273,33 @@ exports.test21 = function (test) {
 
 /*** Fibonacci Visitor ***/
 exports.test22 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(22);
+
+        test.ok(inbox.length === 2);
+        test.ok(inbox.every(function (item) {
+            return item >= 5 && item <= 25;
+        }));
+    });
     test.done();
 };
 
 /*** The Littlest Number ***/
 exports.test23 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(23);
+
+        var strings = splitStrings(inbox);
+
+        test.ok(strings.length === 3);
+
+        strings.forEach(function (string) {
+            test.ok(string.length >= 3 && string.length <= 5);
+            test.ok(string.every(function (item) {
+                return item >= 1 && item <= 99;
+            }));
+        });
+    });
     test.done();
 };
 
