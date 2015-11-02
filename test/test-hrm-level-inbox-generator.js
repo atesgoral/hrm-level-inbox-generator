@@ -323,6 +323,14 @@ exports.test25 = function (test) {
 
 /*** Small Divide ***/
 exports.test26 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(24);
+
+        test.ok(inbox.length === 8);
+        test.ok(inbox.every(function (item) {
+            return item >= 1 && item <= 9;
+        }));
+    });
     test.done();
 };
 

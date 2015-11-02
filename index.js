@@ -106,7 +106,9 @@ var generators = {
     /*** Cumulative Countdown ***/
     '25': undefined,
     /*** Small Divide ***/
-    '26': undefined,
+    '26': function () {
+        return pick.exactly(4).pairsOf().numbersBetween(1, 9).toArray(); // @todo allow 0 in dividend
+    },
     /*** Midnight Petroleum ***/
     '27': null,
     /*** Three Sort ***/
