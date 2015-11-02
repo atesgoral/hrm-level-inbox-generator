@@ -475,6 +475,22 @@ exports.test40 = function (test) {
 
 /*** Sorting Floor ***/
 exports.test41 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(41);
+
+        var strings = splitStrings(inbox);
+
+        test.ok(strings.length === 3);
+        test.ok(strings.every(function (string) {
+            return string.length >= 1 && string.length <= 10;
+        }));
+        test.ok(strings[0].concat(strings[2]).every(function (item) {
+            return item >= 1 && item <= 10;
+        }));
+        test.ok(strings[1].every(function (item) {
+            return item >= 'A' && item <= 'Z';
+        }));
+    });
     test.done();
 };
 

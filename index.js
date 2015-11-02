@@ -178,7 +178,13 @@ var generators = {
         return pick.exactly(3).numbersBetween(2, 30).toArray(); // @todo .primes().or().nonPrimes()
     },
     /*** Sorting Floor ***/
-    '41': undefined,
+    '41': function () {
+        return [].concat(
+            pick.between(1, 10).nonZero().numbersBetween(1, 10).toArray().concat(0),
+            pick.between(1, 10).letters().toArray().concat(0),
+            pick.between(1, 10).nonZero().numbersBetween(1, 10).toArray().concat(0)
+        );
+    },
     /*** End Program. Congratulations. ***/
     '42': null
 };
