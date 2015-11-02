@@ -100,7 +100,9 @@ var generators = {
         );
     },
     /*** Mod Module ***/
-    '24': undefined,
+    '24': function () {
+        return pick.exactly(4).pairsOf().numbersBetween(1, 9).toArray(); // @todo allow 0 in dividend
+    },
     /*** Cumulative Countdown ***/
     '25': undefined,
     /*** Small Divide ***/

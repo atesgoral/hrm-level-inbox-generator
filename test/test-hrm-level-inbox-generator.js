@@ -305,6 +305,14 @@ exports.test23 = function (test) {
 
 /*** Mod Module ***/
 exports.test24 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(24);
+
+        test.ok(inbox.length === 8);
+        test.ok(inbox.every(function (item) {
+            return item >= 1 && item <= 9;
+        }));
+    });
     test.done();
 };
 
