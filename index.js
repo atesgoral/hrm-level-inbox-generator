@@ -80,7 +80,13 @@ var generators = {
         return pick.exactly(5).pairsOf().numbersBetween(0, 9).toArray();
     },
     /*** Zero Terminated Sum ***/
-    '21': undefined,
+    '21': function () {
+        return [].concat(
+            pick.between(0, 5).nonZero().numbersBetween(-9, 9).toArray().concat(0),
+            pick.between(0, 5).nonZero().numbersBetween(-9, 9).toArray().concat(0),
+            pick.between(0, 5).nonZero().numbersBetween(-9, 9).toArray().concat(0)
+        );
+    },
     /*** Fibonacci Visitor ***/
     '22': undefined,
     /*** The Littlest Number ***/

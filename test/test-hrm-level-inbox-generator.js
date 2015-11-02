@@ -6,6 +6,19 @@ function brute(testFn) {
     }
 }
 
+function splitStrings(arr) {
+    var strings = [],
+        zeroPos;
+
+    while (arr.length) {
+        zeroPos = arr.indexOf(0);
+        strings.push(arr.slice(0, zeroPos));
+        arr = arr.slice(zeroPos + 1);
+    }
+
+    return strings;
+}
+
 /*** Mail Room ***/
 exports.test1 = function (test) {
     brute(function () {
@@ -241,6 +254,20 @@ exports.test20 = function (test) {
 
 /*** Zero Terminated Sum ***/
 exports.test21 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(21);
+
+        var strings = splitStrings(inbox);
+
+        test.ok(strings.length === 3);
+
+        strings.forEach(function (string) {
+            test.ok(string.length >= 0 && string.length <= 5);
+            test.ok(string.every(function (item) {
+                return item >= -9 && item <= 9;
+            }));
+        });
+    });
     test.done();
 };
 
