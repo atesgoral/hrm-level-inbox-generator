@@ -478,6 +478,9 @@ exports.test36 = function (test) {
 
 /*** Scavenger Chain ***/
 exports.test37 = function (test) {
+    var inbox = generator.generate(37);
+
+    test.deepEqual(inbox, [ 23, 0 ]);
     test.done();
 };
 

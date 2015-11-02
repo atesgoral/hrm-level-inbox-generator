@@ -177,7 +177,9 @@ var generators = {
         );
     },
     /*** Scavenger Chain ***/
-    '37': undefined,
+    '37': function () {
+        return [ 23, 0 ];
+    },
     /*** Digit Exploder ***/
     '38': function () {
         return pick.exactly(4).numbersBetween(1, 999).toArray();
