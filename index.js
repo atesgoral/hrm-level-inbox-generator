@@ -179,7 +179,9 @@ var generators = {
     /*** Scavenger Chain ***/
     '37': undefined,
     /*** Digit Exploder ***/
-    '38': undefined,
+    '38': function () {
+        return pick.exactly(4).numbersBetween(1, 999).toArray();
+    },
     /*** Re-Coordinator ***/
     '39': undefined,
     /*** Prime Factory ***/

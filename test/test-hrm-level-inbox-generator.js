@@ -483,6 +483,14 @@ exports.test37 = function (test) {
 
 /*** Digit Exploder ***/
 exports.test38 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(38);
+
+        test.ok(inbox.length === 4);
+        test.ok(inbox.every(function (item) {
+            return item >= 1 && item <= 999;
+        }));
+    });
     test.done();
 };
 
