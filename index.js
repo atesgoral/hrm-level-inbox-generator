@@ -183,7 +183,9 @@ var generators = {
         return pick.exactly(4).numbersBetween(1, 999).toArray();
     },
     /*** Re-Coordinator ***/
-    '39': undefined,
+    '39': function () {
+        return pick.exactly(4).numbersBetween(0, 15).toArray();
+    },
     /*** Prime Factory ***/
     '40': function () {
         return pick.exactly(3).numbersBetween(2, 30).toArray(); // @todo .primes().or().nonPrimes()

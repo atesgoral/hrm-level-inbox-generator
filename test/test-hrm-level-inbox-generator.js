@@ -496,6 +496,14 @@ exports.test38 = function (test) {
 
 /*** Re-Coordinator ***/
 exports.test39 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(39);
+
+        test.ok(inbox.length === 4);
+        test.ok(inbox.every(function (item) {
+            return item >= 0 && item <= 15;
+        }));
+    });
     test.done();
 };
 
