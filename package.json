@@ -24,5 +24,7 @@
   "devDependencies": {
     "nodeunit": "^0.9.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "hrm-level-data": "^1.0.0"
+  }
 }

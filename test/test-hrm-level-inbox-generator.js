@@ -1,4 +1,11 @@
-var generator = require('../index.js');
+var generator = require('../index.js'),
+    levels = require('hrm-level-data');
+
+var tilesForLevel = {};
+
+levels.forEach(function (level) {
+    tilesForLevel[level.number] = level.floor && level.floor.tiles;
+});
 
 function brute(testFn) {
     for (var i = 0; i < 1000; i++) {
@@ -397,6 +404,25 @@ exports.test31 = function (test) {
 
 /*** Inventory Report ***/
 exports.test32 = function (test) {
+    var tiles = tilesForLevel[32];
+
+    brute(function () {
+        var inbox = generator.generate(32);
+
+        test.ok(inbox.length === 4);
+
+        var itemMap = {};
+
+        test.ok(inbox.every(function (item) {
+            if (itemMap[item]) {
+                return false;
+            }
+
+            itemMap[item] = true;
+
+            return item !== 0 && tiles.indexOf(item) !== -1;
+        }));
+    });
     test.done();
 };
 

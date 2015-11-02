@@ -55,6 +55,18 @@ Slots.prototype.letters = function () {
     return this;
 };
 
+Slots.prototype.from = function (factory) {
+    this._slots = this._slots.map(function (item) {
+        return this._or && Math.random() > 0.5
+            ? item
+            : factory();
+    }, this);
+
+    this._or = false;
+
+    return this;
+};
+
 Slots.prototype.or = function () {
     this._or = true;
     return this;

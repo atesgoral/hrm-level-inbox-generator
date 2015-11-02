@@ -1,4 +1,11 @@
-var pick = require('./pick');
+var pick = require('./pick'),
+    levels = require('hrm-level-data');
+
+var tilesForLevel = {};
+
+levels.forEach(function (level) {
+    tilesForLevel[level.number] = level.floor && level.floor.tiles;
+});
 
 var generators = {
     /*** Mail Room ***/
@@ -132,7 +139,24 @@ var generators = {
         );
     },
     /*** Inventory Report ***/
-    '32': undefined,
+    '32': function (tiles) {
+        var letterMap = {};
+
+        tiles.forEach(function (tile) {
+            if (tile !== 0) {
+                letterMap[tile] = true;
+            }
+        });
+
+        return pick.exactly(4).from(function () {
+            var letters = Object.keys(letterMap),
+                letter = letters[Math.floor(Math.random() * letters.length)];
+
+            delete letterMap[letter];
+
+            return letter;
+        }).toArray();
+    },
     /*** Where's Carol? ***/
     '33': null,
     /*** Vowel Incinerator ***/
@@ -164,5 +188,5 @@ exports.generate = function (levelNumber) {
         return null;
     }
 
-    return generator();
+    return generator(tilesForLevel[levelNumber]);
 };
