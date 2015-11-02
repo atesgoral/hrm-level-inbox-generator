@@ -124,7 +124,13 @@ var generators = {
     /*** String Storage Floor ***/
     '30': undefined,
     /*** String Reverse ***/
-    '31': undefined,
+    '31': function () {
+        return [].concat(
+            pick.between(1, 5).letters().toArray().concat(0),
+            pick.between(1, 5).letters().toArray().concat(0),
+            pick.between(1, 5).letters().toArray().concat(0)
+        );
+    },
     /*** Inventory Report ***/
     '32': undefined,
     /*** Where's Carol? ***/

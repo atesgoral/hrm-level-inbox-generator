@@ -378,6 +378,20 @@ exports.test30 = function (test) {
 
 /*** String Reverse ***/
 exports.test31 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(31);
+
+        var strings = splitStrings(inbox);
+
+        test.ok(strings.length === 3);
+
+        strings.forEach(function (string) {
+            test.ok(string.length >= 1 && string.length <= 5);
+            test.ok(string.every(function (item) {
+                return item >= 'A' && item <= 'Z';
+            }));
+        });
+    });
     test.done();
 };
 
