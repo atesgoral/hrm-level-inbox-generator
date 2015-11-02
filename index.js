@@ -166,7 +166,9 @@ var generators = {
         return pick.exactly(10).letters().toArray();
     },
     /*** Duplicate Removal ***/
-    '35': undefined,
+    '35': function () {
+        return pick.exactly(10).letters().toArray();
+    },
     /*** Alphabetizer ***/
     '36': undefined,
     /*** Scavenger Chain ***/

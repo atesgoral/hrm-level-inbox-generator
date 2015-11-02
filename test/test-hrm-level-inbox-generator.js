@@ -445,6 +445,14 @@ exports.test34 = function (test) {
 
 /*** Duplicate Removal ***/
 exports.test35 = function (test) {
+    brute(function () {
+        var inbox = generator.generate(35);
+
+        test.ok(inbox.length === 10);
+        test.ok(inbox.every(function (item) {
+            return item >= 'A' && item <= 'Z';
+        }));
+    });
     test.done();
 };
 
