@@ -129,7 +129,9 @@ var generators = {
         return pick.between(4, 8).numbersBetween(0, 9).toArray();
     },
     /*** String Storage Floor ***/
-    '30': undefined,
+    '30': function () {
+        return [ 4, 15, 7, 0, 22, 17, 11, 20, 2, 13, 4, 17, 22 ];
+    },
     /*** String Reverse ***/
     '31': function () {
         return [].concat(

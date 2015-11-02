@@ -54,11 +54,9 @@ exports.test2 = function (test) {
 
 /*** Copy Floor ***/
 exports.test3 = function (test) {
-    brute(function () {
-        var inbox = generator.generate(3);
+    var inbox = generator.generate(3);
 
-        test.deepEqual(inbox, [ -99, -99, -99, -99 ]);
-    });
+    test.deepEqual(inbox, [ -99, -99, -99, -99 ]);
     test.done();
 };
 
@@ -380,6 +378,9 @@ exports.test29 = function (test) {
 
 /*** String Storage Floor ***/
 exports.test30 = function (test) {
+    var inbox = generator.generate(30);
+
+    test.deepEqual(inbox, [ 4, 15, 7, 0, 22, 17, 11, 20, 2, 13, 4, 17, 22 ]);
     test.done();
 };
 
