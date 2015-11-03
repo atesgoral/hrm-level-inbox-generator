@@ -11,7 +11,7 @@ function randomNumberBetween(min, max, nonZero) {
 }
 
 function Slots(count) {
-    this._slots = new Array(count);
+    this._count = count;
 }
 
 Slots.prototype.toArray = function () {
@@ -19,21 +19,24 @@ Slots.prototype.toArray = function () {
 };
 
 Slots.prototype.pairsOf = function () {
-    this._slots = new Array(this._slots.length * 2);
+    this._count *= 2;
     return this;
 };
 
 Slots.prototype.triplesOf = function () {
-    this._slots = new Array(this._slots.length * 3);
+    this._count *= 3;
     return this;
 };
 
 Slots.prototype.numbersBetween = function (min, max) {
-    this._slots = this._slots.map(function (item) {
-        return this._or && Math.random() > 0.5
-            ? item
-            : randomNumberBetween(min, max, this._nonZero);
-    }, this);
+    this._slots = this._slots || [];
+
+    for (var i = 0; i < this._count; i++) {
+        if (this._or && Math.random() > 0.5) {
+            continue;
+        }
+        this._slots[i] = randomNumberBetween(min, max, this._nonZero);
+    }
 
     this._or = false;
 
@@ -41,14 +44,17 @@ Slots.prototype.numbersBetween = function (min, max) {
 };
 
 Slots.prototype.letters = function () {
+    this._slots = this._slots || [];
+
     var a = 'A'.charCodeAt(0),
         z = 'Z'.charCodeAt(0);
 
-    this._slots = this._slots.map(function (item) {
-        return this._or && Math.random() > 0.5
-            ? item
-            : String.fromCharCode(randomNumberBetween(a, z));
-    }, this);
+    for (var i = 0; i < this._count; i++) {
+        if (this._or && Math.random() > 0.5) {
+            continue;
+        }
+        this._slots[i] = String.fromCharCode(randomNumberBetween(a, z));
+    }
 
     this._or = false;
 
@@ -56,11 +62,14 @@ Slots.prototype.letters = function () {
 };
 
 Slots.prototype.from = function (factory) {
-    this._slots = this._slots.map(function (item) {
-        return this._or && Math.random() > 0.5
-            ? item
-            : factory();
-    }, this);
+    this._slots = this._slots || [];
+
+    for (var i = 0; i < this._count; i++) {
+        if (this._or && Math.random() > 0.5) {
+            continue;
+        }
+        this._slots[i] = factory();
+    }
 
     this._or = false;
 
@@ -81,6 +90,6 @@ exports.exactly = function (count) {
     return new Slots(count);
 };
 
-exports.between =function (min, max) {
+exports.between = function (min, max) {
     return new Slots(randomNumberBetween(min, max));
 };

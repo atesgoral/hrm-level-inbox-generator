@@ -67,13 +67,13 @@ exports.test4 = function (test) {
 
         test.ok(inbox.length === 6);
         test.ok(inbox.slice(0, 2).every(function (item) {
-            return item >= -9 && item <= 9;
+            return item >= 1 && item <= 10;
         }));
         test.ok(inbox.slice(2, 4).every(function (item) {
             return item >= 'A' && item <= 'Z';
         }));
         test.ok(inbox.slice(4).every(function (item) {
-            return item >= -9 && item <= 9;
+            return item >= 1 && item <= 10;
         }));
     });
     test.done();
