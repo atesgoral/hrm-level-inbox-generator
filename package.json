@@ -1,6 +1,6 @@
 {
   "name": "hrm-level-inbox-generator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Human Resource Machine inbox generator for testing and benchmarking solutions",
   "main": "index.js",
   "scripts": {
