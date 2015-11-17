@@ -1,10 +1,13 @@
+var MersenneTwister = require('mersenne-twister'),
+    generator = new MersenneTwister();
+
 // @todo Assert state/chain transitions
 
 function randomNumberBetween(min, max, nonZero) {
     var number;
 
     do {
-        number = Math.floor(Math.random() * (max - min + 1)) + min;
+        number = Math.floor(generator.random() * (max - min + 1)) + min;
     } while (nonZero && number === 0);
 
     return number;
@@ -32,7 +35,7 @@ Slots.prototype.numbersBetween = function (min, max) {
     this._slots = this._slots || [];
 
     for (var i = 0; i < this._count; i++) {
-        if (this._or && Math.random() > 0.5) {
+        if (this._or && generator.random() > 0.5) {
             continue;
         }
         this._slots[i] = randomNumberBetween(min, max, this._nonZero);
@@ -50,7 +53,7 @@ Slots.prototype.letters = function () {
         z = 'Z'.charCodeAt(0);
 
     for (var i = 0; i < this._count; i++) {
-        if (this._or && Math.random() > 0.5) {
+        if (this._or && generator.random() > 0.5) {
             continue;
         }
         this._slots[i] = String.fromCharCode(randomNumberBetween(a, z));
@@ -65,7 +68,7 @@ Slots.prototype.from = function (factory) {
     this._slots = this._slots || [];
 
     for (var i = 0; i < this._count; i++) {
-        if (this._or && Math.random() > 0.5) {
+        if (this._or && generator.random() > 0.5) {
             continue;
         }
         this._slots[i] = factory();
@@ -84,6 +87,10 @@ Slots.prototype.or = function () {
 Slots.prototype.nonZero = function () {
     this._nonZero = true;
     return this;
+};
+
+exports.seed = function (seed) {
+    generator.init_seed(seed);
 };
 
 exports.exactly = function (count) {

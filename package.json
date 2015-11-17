@@ -25,6 +25,7 @@
     "nodeunit": "^0.9.1"
   },
   "dependencies": {
-    "hrm-level-data": "^1.0.0"
+    "hrm-level-data": "^1.0.0",
+    "mersenne-twister": "^1.0.1"
   }
 }

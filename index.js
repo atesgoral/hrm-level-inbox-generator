@@ -204,6 +204,10 @@ var generators = {
     '42': null
 };
 
+exports.seed = function (seed) {
+    pick.seed(seed);
+};
+
 exports.generate = function (levelNumber) {
     var generator = generators[levelNumber];
 
