@@ -3,6 +3,7 @@
   "version": "0.0.3",
   "description": "Human Resource Machine inbox generator for testing and benchmarking solutions",
   "main": "index.js",
+  "files": [ "index.js", "pick.js" ],
   "scripts": {
     "test": "nodeunit"
   },
