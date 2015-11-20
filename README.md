@@ -13,6 +13,10 @@ Generates a random inbox that is appropriate for a given level.
 
 **returns** - _Array_. If the generator doesn't support the given level, a `null` is returned.
 
+### .seed(seed)
+
+**seed** - _Number_. Seeds the random number generator to consistently get the same inbox configurations on subsequent `.generate()` calls.
+
 ## Example
 
 ```js
