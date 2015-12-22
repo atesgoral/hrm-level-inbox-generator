@@ -98,7 +98,7 @@ var generators = {
     },
     /*** Busy Mail Room ***/
     '2': function () {
-        return pick.between(6, 15).letters().toArray();
+        return pick.exactly(1).wordFrom(wordLists.busyMailRoom).toArray();
     },
     /*** Copy Floor ***/
     '3': function () {

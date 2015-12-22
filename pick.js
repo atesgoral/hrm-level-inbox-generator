@@ -64,6 +64,17 @@ Slots.prototype.letters = function () {
     return this;
 };
 
+Slots.prototype.wordFrom = function (wordList) {
+    this._slots = this._slots || [];
+
+    for (var i = 0; i < this._count; i++) {
+        var word = wordList[Math.floor(generator.random() * wordList.length)];
+        this._slots.push.apply(this._slots, word.split(''));
+    }
+
+    return this;
+};
+
 Slots.prototype.from = function (factory) {
     this._slots = this._slots || [];
 
