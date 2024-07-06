@@ -1,4 +1,8 @@
-[![Build Status](https://travis-ci.org/atesgoral/hrm-level-inbox-generator.svg?branch=master)](https://travis-ci.org/atesgoral/hrm-level-inbox-generator)
+[![npm](https://img.shields.io/npm/v/hrm-level-inbox-generator)][1]
+[![Build and Deploy](https://github.com/atesgoral/hrm-level-inbox-generator/actions/workflows/test.yml/badge.svg)][2]
+
+[1]: https://www.npmjs.com/package/hrm-level-inbox-generator
+[2]: https://github.com/atesgoral/hrm-level-inbox-generator/actions/workflows/test.yml
 
 # hrm-level-inbox-generator
 Human Resource Machine inbox generator for testing and benchmarking solutions.
